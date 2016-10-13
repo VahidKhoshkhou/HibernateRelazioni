@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,11 +31,11 @@ public class Persona {
 //	@OneToOne
 //	private Computer computer;
 	
-//	@OneToMany(mappedBy="persone",cascade=CascadeType.ALL)
+//	@OneToMany(fetch=FetchType.EAGER,mappedBy="persone",cascade=CascadeType.ALL)
 //  @NotFound(action=NotFoundAction.IGNORE)
 //	private Set<Computer> computer=new HashSet<>();
 //	
-	@ManyToMany(mappedBy="persone")
+	@ManyToMany(mappedBy="persone",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 	private Set<Computer> computer=new HashSet<>();
 	
 public Persona() {
