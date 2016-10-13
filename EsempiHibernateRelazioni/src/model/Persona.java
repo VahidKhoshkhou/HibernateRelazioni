@@ -3,6 +3,7 @@ package model;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,7 +30,7 @@ public class Persona {
 //	@OneToOne
 //	private Computer computer;
 	
-//	@OneToMany(mappedBy="persone")
+//	@OneToMany(mappedBy="persone",cascade=CascadeType.ALL)
 //  @NotFound(action=NotFoundAction.IGNORE)
 //	private Set<Computer> computer=new HashSet<>();
 //	
